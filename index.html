@@ -16,14 +16,9 @@
     Hello world! <br>
     This is the current date and time, as computed by Python:
     <py-script>
-from graphviz import Digraph
-
-dot = Digraph()
-dot.node('A', 'A')
-dot.node('B', 'B')
-dot.node('C', 'C')
-dot.edges(['AB', 'AB', 'AB', 'BC', 'BA', 'CB'])
-dot.render(view=True)
+import networkx as nx
+graph = nx.DiGraph()
+graph.add_edges_from([("root", "a"), ("a", "b"), ("a", "e"), ("b", "c"), ("b", "d"), ("d", "e")])
     </py-script>
   </body>
 </html>
